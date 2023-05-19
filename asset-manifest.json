@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/introduction-to-react-10/static/css/main.fdef11c7.css",
+    "main.js": "/introduction-to-react-10/static/js/main.c1bf982b.js",
+    "static/js/787.294c790e.chunk.js": "/introduction-to-react-10/static/js/787.294c790e.chunk.js",
+    "index.html": "/introduction-to-react-10/index.html",
+    "main.fdef11c7.css.map": "/introduction-to-react-10/static/css/main.fdef11c7.css.map",
+    "main.c1bf982b.js.map": "/introduction-to-react-10/static/js/main.c1bf982b.js.map",
+    "787.294c790e.chunk.js.map": "/introduction-to-react-10/static/js/787.294c790e.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.fdef11c7.css",
+    "static/js/main.c1bf982b.js"
+  ]
+}
