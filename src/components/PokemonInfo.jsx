@@ -1,18 +1,18 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { observer } from "mobx-react";
+
+import store from "../store";
 
 const PokemonInfo = () => {
-  const selectedPokemon = useSelector((state) => state.selectedPokemon);
-  
-  return  selectedPokemon ? (
+  return  store.selectedPokemon ? (
     <div>
-      <h2>{selectedPokemon.name.english}</h2>
+      <h2>{store.selectedPokemon.name.english}</h2>
       <table>
         <tbody>
-          {Object.keys(selectedPokemon.base).map((key) => (
+          {Object.keys(store.selectedPokemon.base).map((key) => (
             <tr key={key}>
               <td>{key}</td>
-              <td>{selectedPokemon.base[key]}</td>
+              <td>{store.selectedPokemon.base[key]}</td>
             </tr>
           ))}
         </tbody>
@@ -21,4 +21,4 @@ const PokemonInfo = () => {
   ) : null;
 };
 
-export default PokemonInfo;
+export default observer(PokemonInfo);

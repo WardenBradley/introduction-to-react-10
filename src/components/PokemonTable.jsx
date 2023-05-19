@@ -1,31 +1,21 @@
-import React, { useContext } from 'react';
+import React from 'react';
+import { observer } from 'mobx-react';
+
 import PokemonRow from "./PokemonRow";
-import { useSelector, useDispatch } from "react-redux";
+import store from "../store";
 
 
-const PokemonTable = () => {
-    const dispatch = useDispatch();
-    const pokemon = useSelector(state => state.pokemon);
-    const filter = useSelector(state => state.filter);
- 
+function PokemonTable() {
     return (
         <table width="100%">
             <tbody>
-                {pokemon
-                    .filter(({ name: { english }}) => 
-                    english
-                        .toLowerCase()
-                        .includes(filter.toLowerCase())
-                    )
-                    .slice(0, 20).map((pokemon) => (
+                {store.filteredPokemon
+                    .slice(0, 20)
+                    .map((pokemon) => (
                     <PokemonRow 
+                        key={pokemon.id}
                         pokemon={pokemon} 
-                        onClick={(pokemon) => 
-                            dispatch({
-                                type: "SET_SELECTED_POKEMON",
-                                payload: pokemon,
-                            })
-                        }
+                        onClick={(pokemon) => store.setSelectedPokemon(pokemon)}
                     />
                     ))}
             </tbody>
@@ -33,4 +23,4 @@ const PokemonTable = () => {
     );
 };
 
-export default PokemonTable;
+export default observer(PokemonTable);
