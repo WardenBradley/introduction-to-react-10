@@ -2,7 +2,7 @@
   "name": "starting-react",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://wardenbradley.github.io/starting-react/",
+  "homepage": "https://wardenbradley.github.io/introduction-to-react-10/",
   "dependencies": {
     "@emotion/react": "^11.11.0",
     "@emotion/styled": "^11.11.0",
